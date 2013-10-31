@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -29,6 +30,8 @@ public:
     QAction *actionQuit;
     QWidget *centralWidget;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QCheckBox *checkBox;
     QStatusBar *statusBar;
     QMenuBar *menuBar;
     QMenu *menuFile;
@@ -45,13 +48,19 @@ public:
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(40, 60, 114, 32));
+        pushButton_2 = new QPushButton(centralWidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(320, 130, 91, 31));
+        checkBox = new QCheckBox(centralWidget);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setGeometry(QRect(130, 240, 111, 51));
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 605, 22));
+        menuBar->setGeometry(QRect(0, 0, 605, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         MainWindow->setMenuBar(menuBar);
@@ -70,6 +79,8 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         actionQuit->setText(QApplication::translate("MainWindow", "Quit", 0));
         pushButton->setText(QApplication::translate("MainWindow", "PushButton1", 0));
+        pushButton_2->setText(QApplication::translate("MainWindow", "Pushbutton2", 0));
+        checkBox->setText(QApplication::translate("MainWindow", "Click here for soup", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
     } // retranslateUi
 
